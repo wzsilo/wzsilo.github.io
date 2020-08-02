@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://wzsilo.github.io</id>
+    <title>顾念昨音</title>
+    <updated>2020-08-02T14:36:17.098Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://wzsilo.github.io"/>
+    <link rel="self" href="https://wzsilo.github.io/atom.xml"/>
+    <subtitle>学习Linux系统之Redhat8过程</subtitle>
+    <logo>https://wzsilo.github.io/images/avatar.png</logo>
+    <icon>https://wzsilo.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2020, 顾念昨音</rights>
+</feed>
