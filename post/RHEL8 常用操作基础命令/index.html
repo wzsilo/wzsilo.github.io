@@ -1,0 +1,550 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>RHEL8 常用操作基础命令 | 顾念昨音</title>
+
+<link rel="shortcut icon" href="https://wzsilo.github.io/favicon.ico?v=1596820200427">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://wzsilo.github.io/styles/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            顾念昨音
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link">
+                            首页
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/archives" class="menu gt-a-link">
+                            归档
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/tags" class="menu gt-a-link">
+                            标签
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/post/about" class="menu gt-a-link">
+                            关于
+                        </a>
+                    
+                </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1596820200427" action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    RHEL8 常用操作基础命令
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2020-07-24 ·
+                    </time>
+                    
+                        <a href="https://wzsilo.github.io/tag/3G9wcUQ4u/" class="post-tags">
+                            # RHEL8
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <h5 id="shell终端编译器">Shell终端编译器</h5>
+<blockquote>
+<p>通常来讲，计算机硬件是由运算器、控制器、存储器、输入/输出设备等共同组成的，而让各种硬件设备各司其职且又能协同运行的东西就是系统内核。<a href="https://www.linuxprobe.com/">Linux系统</a>的内核负责完成对硬件资源的分配、调度等管理任务。由此可见，系统内核对计算机的正常运行来讲是太重要了，因此一般不建议直接去编辑内核中的参数，而是让用户通过基于系统调用接口开发出的程序或服务来管理计算机，以满足日常工作的需要。</p>
+</blockquote>
+<figure data-type="image" tabindex="1"><img src="https://i.loli.net/2020/08/08/j76wLHOozqR21rS.png" alt="" loading="lazy"></figure>
+<h5 id="执行查看帮助命令-man"><strong>执行查看帮助命令</strong> man</h5>
+<blockquote>
+<p><strong>命令名称 [命令参数] [命令对象]</strong></p>
+</blockquote>
+<ul>
+<li>命令对象一般是指要处理的文件、目录、用户等资源</li>
+<li>命令参数值需要随不同的命令和需求情况而发生改变</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>长格式</th>
+<th>man --help</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>短格式</strong></td>
+<td><strong>man -h</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>man</strong> 命令中常用按键以及用途</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>按键</th>
+<th>用处</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>空格键</td>
+<td>向下翻一页</td>
+</tr>
+<tr>
+<td>PaGe down</td>
+<td>向下翻一页</td>
+</tr>
+<tr>
+<td>PaGe up</td>
+<td>向上翻一页</td>
+</tr>
+<tr>
+<td>home</td>
+<td>直接前往首页</td>
+</tr>
+<tr>
+<td>end</td>
+<td>直接前往尾页</td>
+</tr>
+<tr>
+<td>/</td>
+<td>从上至下搜索某个关键词，如“/linux”</td>
+</tr>
+<tr>
+<td>?</td>
+<td>从下至上搜索某个关键词，如“?linux”</td>
+</tr>
+<tr>
+<td>n</td>
+<td>定位到下一个搜索到的关键词</td>
+</tr>
+<tr>
+<td>N</td>
+<td>定位到上一个搜索到的关键词</td>
+</tr>
+<tr>
+<td>q</td>
+<td>退出帮助文档</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>man</strong> 命令帮助信息的结构以及意义</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>结构名称</th>
+<th>代表意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NAME</td>
+<td>命令的名称</td>
+</tr>
+<tr>
+<td>SYNOPSIS</td>
+<td>参数的大致使用方法</td>
+</tr>
+<tr>
+<td>DESCRIPTION</td>
+<td>介绍说明</td>
+</tr>
+<tr>
+<td>EXAMPLES</td>
+<td>演示（附带简单说明）</td>
+</tr>
+<tr>
+<td>OVERVIEW</td>
+<td>概述</td>
+</tr>
+<tr>
+<td>DEFAULTS</td>
+<td>默认的功能</td>
+</tr>
+<tr>
+<td>OPTIONS</td>
+<td>具体的可用选项（带介绍）</td>
+</tr>
+<tr>
+<td>ENVIRONMENT</td>
+<td>环境变量</td>
+</tr>
+<tr>
+<td>FILES</td>
+<td>用到的文件</td>
+</tr>
+<tr>
+<td>SEE ALSO</td>
+<td>相关的资料</td>
+</tr>
+<tr>
+<td>HISTORY</td>
+<td>维护历史与联系方式</td>
+</tr>
+</tbody>
+</table>
+<h5 id="常用系统工作命令">常用系统工作命令</h5>
+<ul>
+<li>
+<p><strong>echo命令</strong>：用于在终端输出字符串或变量提取后的值，格式为“echo [字符串 | $变量]”。</p>
+<ul>
+<li>
+<p>将“hello,world.” 输出到终端上</p>
+<pre><code class="language-shell">[root@localhost ~]# echo hello,world.
+hello,world.
+[root@localhost ~]#
+</code></pre>
+</li>
+<li>
+<p>使用$变量的方式提取变量SHELL的值</p>
+<pre><code class="language-shell">[root@localhost ~]# echo $SHELL
+/bin/bash
+[root@localhost ~]#
+</code></pre>
+</li>
+</ul>
+<p>常用参数详情见 <a href="https://www.linuxcool.com/echo">echo命令详解</a></p>
+<table>
+<thead>
+<tr>
+<th>-n</th>
+<th>不输出结尾的换行符</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-e “\a”</td>
+<td>发出警告音</td>
+</tr>
+<tr>
+<td>-e “\b”</td>
+<td>删除前面的一个字符</td>
+</tr>
+<tr>
+<td>-e “\c”</td>
+<td>结尾不加换行符</td>
+</tr>
+<tr>
+<td>-e “\f”</td>
+<td>换行，光标扔停留在原来的坐标位置</td>
+</tr>
+<tr>
+<td>-e “\n”</td>
+<td>换行，光标移至行首</td>
+</tr>
+<tr>
+<td>-e “\r”</td>
+<td>光标移至行首，但不换行</td>
+</tr>
+<tr>
+<td>-E</td>
+<td>禁止反斜杠转移，与-e参数功能相反</td>
+</tr>
+<tr>
+<td>—version</td>
+<td>查看版本信息</td>
+</tr>
+<tr>
+<td>--help</td>
+<td>查看帮助信息</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><strong>date命令</strong>：用于显示及设置系统的时间或日期，格式为“date [选项] [+指定的格式]”。</p>
+<ul>
+<li>
+<p>将当前时间日期月份输出到终端上</p>
+<pre><code class="language-shell">[root@localhost ~]# date
+Fri Jul 24 22:20:52 CST 2020
+[root@localhost ~]#
+</code></pre>
+</li>
+<li>
+<p>按照标准年月日格式输出时间到终端上</p>
+<pre><code>[root@localhost ~]# date &quot;+%Y-%m-%d %H:%M:%S&quot;
+2020-07-24 22:12:35
+[root@localhost ~]#
+</code></pre>
+<p>常用参数以及作用详情见 <strong><a href="https://www.linuxcool.com/date">date命令详解</a></strong></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-d datestr</td>
+<td>显示 datestr 中所设定的时间 (非系统时间)</td>
+</tr>
+<tr>
+<td>-s datestr</td>
+<td>将系统时间设为 datestr 中所设定的时间</td>
+</tr>
+<tr>
+<td>-u</td>
+<td>显示目前的格林威治时间</td>
+</tr>
+<tr>
+<td>--help</td>
+<td>显示帮助信息</td>
+</tr>
+<tr>
+<td>--version</td>
+<td>显示版本编号</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>%t</td>
+<td>跳格[Tab键]</td>
+</tr>
+<tr>
+<td>%H</td>
+<td>小时（00～23）</td>
+</tr>
+<tr>
+<td>%I</td>
+<td>小时（00～12）</td>
+</tr>
+<tr>
+<td>%M</td>
+<td>分钟（00～59）</td>
+</tr>
+<tr>
+<td>%S</td>
+<td>秒（00～59）</td>
+</tr>
+<tr>
+<td>%j</td>
+<td>今年中的第几天</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>reboot命令</strong>：用于重启系统，其格式为reboot。</p>
+</li>
+<li>
+<p><strong>poweroff命令</strong>：poweroff命令用于关闭系统，其格式为poweroff。</p>
+</li>
+<li>
+<p><strong>wget命令</strong>：用于在终端中下载网络文件，格式为“wget [参数] URL”。</p>
+</li>
+<li>
+<p><strong>ps命令</strong>：用于查看系统中的进程状态，格式为“ps [参数]”。</p>
+</li>
+<li>
+<p><strong>top命令</strong>：用于动态地监视进程活动与系统负载等信息，其格式为top。</p>
+</li>
+<li>
+<p><strong>pidof命令</strong>：用于查询某个指定服务进程的PID值，格式为“pidof [参数] [服务名称]”。</p>
+</li>
+<li>
+<p><strong>kill命令</strong>：用于终止某个指定PID的服务进程，格式为“kill [参数] [进程PID]”。</p>
+</li>
+<li>
+<p><strong>killall命令</strong>：用于终止某个指定名称的服务所对应的全部进程，格式为：“killall [参数] [服务名称]”。</p>
+</li>
+</ul>
+<h5 id="系统状态检测命令">系统状态检测命令</h5>
+<ul>
+<li><strong>ifconfig命令</strong>：用于获取网卡配置与网络状态等信息，格式为“ifconfig [网络设备] [参数]”。</li>
+<li><strong>uname命令</strong>：用于查看系统内核与系统版本等信息，格式为“uname [-a]”。</li>
+<li><strong>uptime命令</strong>：用于查看系统的负载信息，格式为uptime。</li>
+<li><strong>free命令</strong>：用于显示当前系统中内存的使用量信息，格式为“free [-h]”。</li>
+<li><strong>who命令</strong>：用于查看当前登入主机的用户终端信息，格式为“who [参数]”。</li>
+<li><strong>last命令</strong>：用于查看所有系统的登录记录，格式为“last [参数]”。</li>
+<li><strong>history命令</strong>：用于显示历史执行过的命令，格式为“history [-c]”。</li>
+<li><strong>sosreport命令</strong>：用于收集系统配置及架构信息并输出诊断文档，格式为sosreport。</li>
+</ul>
+<h5 id="工作目录切换命令">工作目录切换命令</h5>
+<ul>
+<li><strong>pwd命令</strong>：用于显示用户当前所处的工作目录，格式为“pwd [选项]”。</li>
+<li><strong>cd命令</strong>：用于切换工作路径，格式为“cd [目录名称]”。</li>
+<li><strong>ls命令</strong>：用于显示目录中的文件信息，格式为“ls [选项] [文件] ”。</li>
+</ul>
+<h5 id="文本文件编辑命令">文本文件编辑命令</h5>
+<ul>
+<li><strong>cat命令</strong>：用于查看纯文本文件（内容较少的），格式为“cat [选项] [文件]”。</li>
+<li><strong>more命令</strong>：用于查看纯文本文件（内容较多的），格式为“more [选项]文件”。</li>
+<li><strong>head命令</strong>：用于查看纯文本文档的前N行，格式为“head [选项] [文件]”。</li>
+<li><strong>tail命令</strong>：用于查看纯文本文档的后N行或持续刷新内容，格式为“tail [选项] [文件]”。</li>
+<li><strong>sed命令</strong>：利用脚本来处理文本文件</li>
+<li><strong>tr命令</strong>：用于替换文本文件中的字符，格式为“tr [原始字符] [目标字符]”。</li>
+<li><strong>wc命令</strong>：用于统计指定文本的行数、字数、字节数，格式为“wc [参数] 文本”。</li>
+<li><strong>stat命令</strong>：用于查看文件的具体存储信息和时间等信息，格式为“stat 文件名称”。</li>
+<li><strong>cut命令</strong>：用于按“列”提取文本字符，格式为“cut [参数] 文本”。</li>
+<li><strong>diff命令</strong>：用于比较多个文本文件的差异，格式为“diff [参数] 文件”。</li>
+</ul>
+<h5 id="文件目录管理命令">文件目录管理命令</h5>
+<ul>
+<li><strong>touch命令</strong>：用于创建空白文件或设置文件的时间，格式为“touch [选项] [文件]”。</li>
+<li><strong>mkdir命令</strong>：用于创建空白的目录，格式为“mkdir [选项] 目录”。</li>
+<li><strong>cp命令</strong>：用于复制文件或目录，格式为“cp [选项] 源文件 目标文件”。</li>
+<li><strong>mv命令</strong>：用于剪切文件或将文件重命名，格式为“mv [选项] 源文件 [目标路径|目标文件名]”。</li>
+<li><strong>rm命令</strong>：用于删除文件或目录，格式为“rm [选项] 文件”。</li>
+<li><strong>dd命令</strong>：用于按照指定大小和个数的数据块来复制文件或转换文件，格式为“dd [参数]”。</li>
+<li><strong>file命令</strong>：用于查看文件的类型，格式为“file 文件名”。</li>
+</ul>
+<h5 id="打包压缩与搜索命令">打包压缩与搜索命令</h5>
+<ul>
+<li><strong>tar命令</strong>：用于对文件进行打包压缩或解压，格式为“tar [选项] [文件]”。</li>
+<li><strong>grep命令</strong>：用于在文本中执行关键词搜索，并显示匹配的结果，格式为“grep [选项] [文件]”。</li>
+<li><strong>find命令</strong>：用于按照指定条件来查找文件，格式为“find [查找路径] 寻找条件 操作”。</li>
+</ul>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://wzsilo.github.io/post/RHEL8 VMware Workstation 15.5.1/" class="post-title gt-a-link">
+                    RHEL8 VMware Workstation 15.5.1
+                </a>
+            </div>
+        
+
+        
+            <span id="/post/" class="leancloud_visitors" data-flag-title="RHEL8 常用操作基础命令">
+                <em class="post-meta-item-text">阅读量 </em>
+                <i class="leancloud-visitors-count">0</i>
+            </span>
+        
+
+        
+
+        
+            <script src='https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+
+<style>
+	div#vcomments{
+		width:100%;
+		max-width: 1000px;
+		padding: 2.5%
+	}
+</style>
+
+
+	<div id="vcomments"></div>
+
+<script>
+	new Valine({
+		el: '#vcomments',
+		appId: 'aAPbxBYcKEnsQu4kqHz7WvH3-gzGzoHsz',
+		appKey: '0f7CvdSmrtqT18XWAEdvRzDS',
+		avatar: '',
+		pageSize: 5,
+		recordIp: true,
+		placeholder: 'Comments are welcome, everyone can make progress together.',
+		visitor: true,
+	});
+</script>
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">学习Linux系统之Redhat8过程</div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        Powered by <a href="https://github.com/wzsilo" target="_blank">Wzsilo</a>
+    </div>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea | <a href="https://wzsilo.github.io/atom.xml" target="_blank">RSS</a></a>
+    </div>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+    </div>
+</div>
+</body>
+</html>

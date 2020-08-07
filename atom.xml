@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wzsilo.github.io</id>
     <title>顾念昨音</title>
-    <updated>2020-08-02T17:33:45.625Z</updated>
+    <updated>2020-08-07T17:10:24.436Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wzsilo.github.io"/>
     <link rel="self" href="https://wzsilo.github.io/atom.xml"/>
@@ -11,10 +11,24 @@
     <icon>https://wzsilo.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 顾念昨音</rights>
     <entry>
-        <title type="html"><![CDATA[RHEL8之开班仪式]]></title>
-        <id>https://wzsilo.github.io/post/RHEL8之开班仪式/</id>
-        <link href="https://wzsilo.github.io/post/RHEL8之开班仪式/">
+        <title type="html"><![CDATA[RHEL8 常用操作基础命令]]></title>
+        <id>https://wzsilo.github.io/post/RHEL8 常用操作基础命令/</id>
+        <link href="https://wzsilo.github.io/post/RHEL8 常用操作基础命令/">
         </link>
-        <updated>2020-07-18T14:37:13.000Z</updated>
+        <updated>2020-07-24T14:10:49.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[RHEL8 VMware Workstation 15.5.1]]></title>
+        <id>https://wzsilo.github.io/post/RHEL8 VMware Workstation 15.5.1/</id>
+        <link href="https://wzsilo.github.io/post/RHEL8 VMware Workstation 15.5.1/">
+        </link>
+        <updated>2020-07-19T15:00:21.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[RHEL8 学习方案和红帽介绍]]></title>
+        <id>https://wzsilo.github.io/post/RHEL8 学习方案和红帽介绍/</id>
+        <link href="https://wzsilo.github.io/post/RHEL8 学习方案和红帽介绍/">
+        </link>
+        <updated>2020-07-18T13:46:12.000Z</updated>
     </entry>
 </feed>
